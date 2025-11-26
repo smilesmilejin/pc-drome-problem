@@ -9,6 +9,42 @@ def is_palindrome(head):
     # Write your solution here!
     pass
 
+    # empty SSL
+    if not head:
+        return True
+    
+    # SSL with length of 1
+    if not head.next:
+        return True
+    
+    # # calculate the length of SSL
+    # length = 0
+    # current = head
+
+    # while current:
+    #     length += 1
+    #     current = current.next
+
+    # print('SLL length is: ', length)
+
+    # transfer the linked list values into an array
+
+    arr = []
+
+    current = head
+
+    while current:
+        arr.append(current.value)
+        current = current.next
+
+    # print('arr is now: ', arr)
+
+    for i in range(len(arr) // 2):
+        if arr[i] != arr[-i-1]:
+            return False
+    
+    return True
+
 
 # 5->4->2
 list_1 = Node(5, Node(4, Node(2)))
